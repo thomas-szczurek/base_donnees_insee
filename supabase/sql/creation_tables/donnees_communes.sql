@@ -1,6 +1,6 @@
 CREATE TABLE insee.donnees_communes (
 	pk_id int4 GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-	code_commune int4 NOT NULL,
+	code_commune text NOT NULL,
 	annee int2 NOT NULL,
 	fk_base int2 NOT NULL,
 	donnees jsonb NOT NULL,
