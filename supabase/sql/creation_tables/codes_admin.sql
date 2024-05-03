@@ -1,3 +1,4 @@
 CREATE TABLE insee.codes_admin (
-	code_admin text PRIMARY KEY
+	pk_id int4 PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	code_admin text NOT NULL
 );
