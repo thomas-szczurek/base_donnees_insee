@@ -6,6 +6,5 @@ CREATE TABLE insee.zonages_administratifs (
 	annee_debut_validite int2 NOT NULL,
 	annee_fin_validite int2 NOT NULL,
 	geom geometry(POLYGON, 2154),
-	CONSTRAINT fk_type_zonage FOREIGN KEY (fk_type) REFERENCES insee.types_zonage (pk_id) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT fk_zonage_code FOREIGN KEY (code_admin) REFERENCES insee.codes_admin (code_admin) ON UPDATE NO ACTION ON DELETE NO ACTION
+	CONSTRAINT fk_type_zonage FOREIGN KEY (fk_type) REFERENCES insee.types_zonage (pk_id) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE
   ) tablespace pg_default;
