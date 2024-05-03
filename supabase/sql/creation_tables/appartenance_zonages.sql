@@ -1,7 +1,7 @@
 CREATE TABLE insee.appartenance_zonages (
 	pk_id int4 GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-	fk_zonage_parent text NOT NULL,
-	fk_zonage_enfant text NOT NULL,
+	fk_zonage_parent int4 NOT NULL,
+	fk_zonage_enfant int4 NOT NULL,
 	fk_type_zonage int2 NOT NULL,
 	annee_debut_validite int2 NOT NULL,
 	annee_fin_validite int2,
