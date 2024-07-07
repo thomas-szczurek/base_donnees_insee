@@ -1,5 +1,5 @@
 -- Vue supabase permettant de récupérer les années minimum et maximum de présence de chaque clef
-CREATE VIEW insee.presence_clefs_annees
+CREATE VIEW insee.presence_clefs_annees AS
 -- On utilise les UNION pour profiter du partionnement de donnees_communes et accelérer la requête
 SELECT
 	clef_json,
@@ -90,4 +90,4 @@ SELECT
 FROM
 	insee.correspondance_clefs_champs
 WHERE fk_base = 9
-;
+ORDER BY fk_base, clef_json;
