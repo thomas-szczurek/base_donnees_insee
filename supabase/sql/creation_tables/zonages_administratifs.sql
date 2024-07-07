@@ -1,7 +1,7 @@
 CREATE TABLE insee.zonages_administratifs (
-    pk_id int4 PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-	text int2 NOT NULL,
-    nom text NOT NULL,
+    	pk_id int4 PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	code_admin text int2 NOT NULL,
+   	nom text NOT NULL,
 	fk_type int2 NOT NULL,
 	annee_debut_validite int2 NOT NULL,
 	annee_fin_validite int2 NOT NULL,
