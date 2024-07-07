@@ -90,4 +90,13 @@ SELECT
 FROM
 	insee.correspondance_clefs_champs
 WHERE fk_base = 9
+UNION
+SELECT
+	clef_json,
+  10 AS fk_base,
+	(SELECT min(annee) FROM insee.donnees_communes WHERE fk_base = 10 AND donnees ? clef_json) AS premiere_annee_presence,
+	(SELECT max(annee) FROM insee.donnees_communes WHERE fk_base = 10 AND donnees ? clef_json) AS derniere_annee_presence
+FROM
+	insee.correspondance_clefs_champs
+WHERE fk_base = 9
 ORDER BY fk_base, clef_json;
