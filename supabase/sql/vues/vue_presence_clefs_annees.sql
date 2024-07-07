@@ -98,5 +98,5 @@ SELECT
 	(SELECT max(annee) FROM insee.donnees_communes WHERE fk_base = 10 AND donnees ? clef_json) AS derniere_annee_presence
 FROM
 	insee.correspondance_clefs_champs
-WHERE fk_base = 9
+WHERE fk_base = 10
 ORDER BY fk_base, clef_json;
