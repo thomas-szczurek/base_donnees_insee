@@ -17,4 +17,5 @@ CREATE TABLE insee.donnees_communes_fk_6 PARTITION OF insee.donnees_communes FOR
 CREATE TABLE insee.donnees_communes_fk_7 PARTITION OF insee.donnees_communes FOR VALUES IN (7);
 CREATE TABLE insee.donnees_communes_fk_8 PARTITION OF insee.donnees_communes FOR VALUES IN (8);
 CREATE TABLE insee.donnees_communes_fk_9 PARTITION OF insee.donnees_communes FOR VALUES IN (9);
+CREATE TABLE insee.donnees_communes_fk_10 PARTITION OF insee.donnees_communes FOR VALUES IN (10);
 END;
