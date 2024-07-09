@@ -1,5 +1,5 @@
--- Cette vue n'est présente que dans la version locale et sert à générer la table donnees_com_fk_2 de supabase
-CREATE MATERIALIZED VIEW local.cross_donnees_fk_2 AS
+-- Cette vue n'est présente que dans la version locale et sert à générer la table public.donnees_com OLAP de supabase
+CREATE MATERIALIZED VIEW local.donnees_communes_olap AS
 WITH
 -- Sélection des codes communes
 	codes_com AS (
@@ -11,30 +11,34 @@ WITH
 -- Sélections des clefs et unnest par année
 	clefs AS (
 		SELECT
-			clef_json,
+			pk_id,
 			generate_series(premiere_annee_presence, derniere_annee_presence,1) AS annee
 		FROM local.correspondance_clefs_champs
-		WHERE fk_base = 2
 	),
 -- cross join des clefs + année unnestées et des codes communaux
 	tc AS (
 	SELECT
 		cc.code_admin AS code_com,
 		cl.annee AS annee,
-		cl.clef_json AS clef_json
+		cl.pk_id AS pk_id
 	FROM codes_com AS cc
 	CROSS JOIN clefs AS cl
-	ORDER BY clef_json, annee, code_com)
+	)
 -- Selection finale avec récupération des données
 SELECT
 	tc.code_com,
 	tc.annee,
-	tc.clef_json,
+	co.fk_base,
+	co.clef_json,
 	CASE
 		WHEN (d.donnees ->> clef_json) IN ('', 's') THEN NULL
 		ELSE ((d.donnees ->> clef_json)::real)
 	END AS valeur
 FROM tc
 JOIN
-    (SELECT * FROM local.donnees_communes WHERE fk_base = 2) AS d
-        ON (tc.code_com = d.code_commune AND tc.annee = d.annee);
+    local.donnees_communes AS d
+        ON (tc.code_com = d.code_commune AND tc.annee = d.annee)
+LEFT JOIN
+	local.correspondance_clefs_champs AS co
+		ON tc.pk_id = co.pk_id
+ORDER BY tc.annee, co.fk_base, co.clef_json, tc.code_com;

@@ -1,7 +1,7 @@
 WITH d AS (
   SELECT 
 	"CODGEO",
-	regexp_replace('{pop_p,' || "POP_P" || ',
+	regexp_replace('pop_p,' || "POP_P" || ',
 			pop_0_14_ans_p,' || "POP0014_P" || ',
 			pop_15_29_ans_p,' || "POP1529_P" || ',
 			pop_30_44_ans_p,' || "POP3044_P" || ',
@@ -104,7 +104,7 @@ WITH d AS (
 			pop_55_ans_et_plus_ans_employes_c,' || "POP55P_CS5_C" || ',
 			pop_55_ans_et_plus_ans_ouvriers_c,' || "POP55P_CS6_C" || ',
 			pop_55_ans_et_plus_ans_retraites_c,' || "POP55P_CS7_C" || ',
-			pop_55_ans_et_plus_ans_autres_c,' || "POP55P_CS8_C" || '}',
+			pop_55_ans_et_plus_ans_autres_c,' || "POP55P_CS8_C",
 		E'[\t\n\r]','','g') AS data
 		FROM insee.rp_population_import
 	)

@@ -1,7 +1,7 @@
 WITH d AS (
   SELECT 
 	"CODGEO",
-	regexp_replace('{nb_menages_fiscaux,' || "NBMENFISC" || ',
+	regexp_replace('nb_menages_fiscaux,' || "NBMENFISC" || ',
 			nb_personnes_menages_fiscaux,' || "NBPERSMENFISC" || ',
 			revenu_median,' || "MED" || ',
 			part_menages_fiscaux_imposes,' || "PIMP" || ',
@@ -27,7 +27,7 @@ WITH d AS (
 			part_des_impots,' || "PIMPOT" || ',
 			1er_decile,' || "D1" || ',
 			9eme_decile,' || "D9" || ',
-			rapport_inter_decile,' || "RD" || '}',
+			rapport_inter_decile,' || "RD",
 		E'[\t\n\r]','','g') AS data
 		FROM insee.filosofi_import
 	)
