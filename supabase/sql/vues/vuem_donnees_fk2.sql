@@ -8,7 +8,7 @@ WITH
 		FROM local.zonages_administratifs
 		WHERE fk_type = 1
 	),
--- Sélections des clefs
+-- Sélections des clefs et unnest par année
 	clefs AS (
 		SELECT
 			clef_json,
