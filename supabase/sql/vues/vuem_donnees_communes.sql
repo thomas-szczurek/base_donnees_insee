@@ -31,7 +31,7 @@ SELECT
 	tc.annee,
 	tc.clef_json,
 	CASE
-		WHEN (d.donnees ->> clef_json) = '' THEN NULL
+		WHEN (d.donnees ->> clef_json) IN ('', 's') THEN NULL
 		ELSE ((d.donnees ->> clef_json)::real)
 	END AS valeur
 FROM tc
