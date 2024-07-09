@@ -1,4 +1,4 @@
--- Vue supabase permettant de récupérer les années minimum et maximum de présence de chaque clef
+-- Vue locale permettant de récupérer les années minimum et maximum de présence de chaque clef avant réimport dans supabase.insee.correspondances_clefs_champs
 CREATE VIEW insee.presence_clefs_annees AS
 -- On utilise les UNION pour profiter du partionnement de donnees_communes et accelérer la requête
 CREATE VIEW insee.presence_clefs_annees AS
