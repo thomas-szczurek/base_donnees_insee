@@ -13,7 +13,7 @@ WITH
 		SELECT
 			clef_json,
 			generate_series(premiere_annee_presence, derniere_annee_presence,1) AS annee
-		FROM local.presence_clefs_annees
+		FROM local.correspondance_clefs_champs
 		WHERE fk_base = 2
 	),
 -- cross join des clefs + année unnestées et des codes communaux
