@@ -31,7 +31,7 @@ SELECT
 	co.fk_base,
 	co.clef_json,
 	CASE
-		WHEN (d.donnees ->> clef_json) IN ('', 's') THEN NULL
+		WHEN (d.donnees ->> clef_json) IN ('','null','s') THEN NULL
 		ELSE ((d.donnees ->> clef_json)::real)
 	END AS valeur
 FROM tc

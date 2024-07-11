@@ -46,7 +46,7 @@ WITH d AS (
 					menages_emmenages_entre_10_19ans_p,' || "MEN_ANEM1019_P" || ',
 					menages_emmenages_entre_20_29ans_p,' || "MEN_ANEM2029_P" || ',
 					menages_emmenages_plus_30ans_p,' || "MEN_ANEM30P_P" || ',
-					population_menages,' || "PMEN_P" || ',
+					population_menages_p,' || "PMEN_P" || ',
 					pop_menages_emmenages_moins_2ans_p,' || "PMEN_ANEM0002_P" || ',
 					pop_menages_emmenages_entre_2_4ans_p,' || "PMEN_ANEM0204_P" || ',
 					pop_menages_emmenages_entre_5_9ans_p,' || "PMEN_ANEM0509_P" || ',
