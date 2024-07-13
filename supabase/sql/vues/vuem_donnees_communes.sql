@@ -31,6 +31,7 @@ WITH
 		tc.annee,
 		co.fk_base,
 		co.clef_json,
+		co.ordre
 		CASE
 			WHEN (d.donnees ->> clef_json) IN ('','null','s','nd') THEN NULL
 			ELSE ((d.donnees ->> clef_json)::real)

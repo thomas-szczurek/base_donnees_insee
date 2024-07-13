@@ -21,6 +21,13 @@ Et ajouter
 
 pop_15_ans_plus_non_mariee_p,' || "POP15P_NONMARIEE_P" || ',
 
+#### 3 : RP Logements
+
+Mettre à jour dates des champs :
+nb_rp_construites_entre_2006_2017_p
+nb_rp_maisons_construites_entre_2006_2017_p
+nb_rp_apparts_construites_entre_2006_2017_p
+
 
 #### 5 : Rp Activité des résidents
 

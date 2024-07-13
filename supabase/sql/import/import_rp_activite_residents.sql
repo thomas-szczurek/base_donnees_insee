@@ -72,7 +72,7 @@ WITH d AS (
 						actifs_occupes_prof_intermediaires_15_64_ans_c,' || "ACTOCC1564_CS4_C" || ',					
 						actifs_occupes_employes_15_64_ans_c,' || "ACTOCC1564_CS5_C" || ',
 						actifs_occupes_ouvriers_15_64_ans_c,' || "ACTOCC1564_CS6_C" || ',
-						emplois_au_lieu_travail,' || "EMPLT_P" || ',
+						emplois_au_lieu_travail_p,' || "EMPLT_P" || ',
 						actifs_occupes_p,' || "ACTOCC_P" || ',
 						pop_15_ans_plus_p,' || "POP15P_P" || ',
 						actifs_15_ans_plus_p,' || "ACT15P_P" || ',
