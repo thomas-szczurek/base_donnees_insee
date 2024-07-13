@@ -2,11 +2,11 @@
 
 ### imports
 
-#### 1 : Rp Population
+#### 1 : RP Population
 
 RAS
 
-#### 2 : Rp Ménages
+#### 2 : RP Ménages
 
 pour les esions pré 2016 retirer
 
@@ -24,12 +24,54 @@ pop_15_ans_plus_non_mariee_p,' || "POP15P_NONMARIEE_P" || ',
 #### 3 : RP Logements
 
 Mettre à jour dates des champs :
+
 nb_rp_construites_entre_2006_2017_p
 nb_rp_maisons_construites_entre_2006_2017_p
 nb_rp_apparts_construites_entre_2006_2017_p
 
+#### 4 : RP Diplomes Formation
 
-#### 5 : Rp Activité des résidents
+Transformer
+
+nb_pers_non_scolarisees_15ans_plus_cap_bep_p,' || "NSCOL15P_CAPBEP_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_cap_bep_p,' || "HNSCOL15P_CAPBEP_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_cap_bep_p,' || "FNSCOL15P_CAPBEP_P" || ',
+
+En :
+
+nb_pers_non_scolarisees_15ans_plus_brevet_cap_bep_p,' || "NSCOL15P_BCAPBEP_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_brevet_cap_bep_p,' || "HNSCOL15P_BCAPBEP_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_brevet_cap_bep_p,' || "FNSCOL15P_BCAPBEP_P" || ',
+
+Retirer :
+
+nb_pers_non_scolarisees_15ans_plus_brevet_bepc_dnb_p,' || "NSCOL15P_BEPC_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_brevet_bepc_dnb_p,' || "HNSCOL15P_BEPC_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_brevet_bepc_dnb_p,' || "FNSCOL15P_BEPC_P" || ',
+
+Transformer :
+
+nb_pers_non_scolarisees_15ans_plus_bac_plus_2_p,' || "NSCOL15P_SUP2_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_bac_plus_2_p,' || "HNSCOL15P_SUP2_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_bac_plus_2_p,' || "FNSCOL15P_SUP2_P" || ',
+
+En :
+
+nb_pers_non_scolarisees_15ans_plus_sup_bac_p,' || "NSCOL15P_SUP2_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_sup_bac_p,' || "HNSCOL15P_SUP2_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_sup_bac_p,' || "FNSCOL15P_SUP2_P" || ',
+
+Retirer :
+
+nb_pers_non_scolarisees_15ans_plus_bac_plus_3_4_p,' || "NSCOL15P_SUP34_P" || ',
+nb_pers_non_scolarisees_15ans_plus_bac_plus_5_plus_p,' || "NSCOL15P_SUP5_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_bac_plus_3_4_p,' || "HNSCOL15P_SUP34_P" || ',
+nb_hommes_non_scolarisees_15ans_plus_bac_plus_5_plus_p,' || "HNSCOL15P_SUP5_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_bac_plus_3_4_p,' || "FNSCOL15P_SUP34_P" || ',
+nb_femmes_non_scolarisees_15ans_plus_bac_plus_5_plus_p,' || "FNSCOL15P_SUP5_P
+
+
+#### 5 : RP Activité des résidents
 
 Pour les vesions pré 2016 retirer :
 
@@ -53,6 +95,14 @@ actifs_bac_plus_2_p,' || "ACT_SUP2_P" || ',
 actifs_bac_plus_3_4_p,' || "ACT_SUP34_P" || ',
 actifs_bac_plus_5_ou_sup_p,' || "ACT_SUP5_P" || '
 
+#### 6 : RP Emploi
+
+RAS
+
+#### 7 : Filosofi
+
+RAS
+
 ### maj tables cross_donnees
 
 1) sur subapase
@@ -74,7 +124,7 @@ END;
 Puis
 
 ```sql
-REFRESH MATERIALIZED VIEW local.resence_clefs_annees;
+REFRESH MATERIALIZED VIEW local.presence_clefs_annees;
 ```
 
 Placer cette table dans supabase
