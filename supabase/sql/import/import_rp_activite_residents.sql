@@ -89,7 +89,7 @@ WITH d AS (
 						prof_intermediaires_au_lieu_travail_c,' || "EMPLT_CS4_C" || ',
 						employes_au_lieu_travail_c,' || "EMPLT_CS5_C" || ',
 						ouvriers_au_lieu_travail_c,' || "EMPLT_CS6_C" || ',
-						emplois_au_lieu_travail_agriculture_,c' || "EMPLT_AGRI_C" || ',
+						emplois_au_lieu_travail_agriculture_c,' || "EMPLT_AGRI_C" || ',
 						emplois_au_lieu_travail_industrie_c,' || "EMPLT_INDUS_C" || ',
 						emplois_au_lieu_travial_construction_c,' || "EMPLT_CONST_C" || ',
 						emplois_au_lieu_travail_commerce_transport_services_c,' || "EMPLT_CTS_C" || ',
