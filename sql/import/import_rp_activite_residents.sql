@@ -135,7 +135,7 @@ WITH d AS (
 INSERT INTO insee.donnees_communes("annee","fk_base","donnees", "code_commune")
 SELECT
 	   2020,
-	   5,
+	   4,
 	   jsonb_object(string_to_array(data::text,',')),
 	   "CODGEO"
 FROM d
