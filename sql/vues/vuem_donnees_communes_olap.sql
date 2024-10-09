@@ -40,7 +40,7 @@ WITH
 		insee.donnees_communes AS d
 			ON (tc.code_com = d.code_commune AND tc.annee = d.annee)
 	LEFT JOIN
-		insee.correspondance_clefs_champs AS co
+		insee.presence_clefs_annees AS co
 			ON tc.pk_id = co.pk_id
 	ORDER BY tc.annee, co.fk_base, co.clef_json, tc.code_com
 	)
