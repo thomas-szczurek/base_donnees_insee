@@ -1,6 +1,7 @@
 -- Vue locale permettant de récupérer les années minimum et maximum de présence de chaque clef avant réimport dans supabase.insee.correspondances_clefs_champs
 CREATE MATERIALIZED VIEW insee.presence_clefs_annees AS
 SELECT
+	c.pk_id AS pk_id,
 	c.clef_json AS clef_json,
 	c.fk_base AS fk_base,
 	p.premiere AS premiere_annee_presence,
