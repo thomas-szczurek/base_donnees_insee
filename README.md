@@ -1,2 +1,3 @@
 # plugin_insee
-gestion de la base PostgreSQL permettant l'accès aux données de l'INSEE
+
+**A déménagé de façon permanente sur [Gitlab](https://gitlab.com/Thomas_szczurek_gayant/bd_insee)**
